@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Course List Test
 
-## Getting Started
+A Next.js web app for managing course lists.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How to Run This App (Step by Step)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Prerequisites — Install These First
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Install Node.js**
+   - Go to https://nodejs.org
+   - Download the **LTS** version (the big green button)
+   - Run the installer, click "Next" through everything, done
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Install pnpm** (the package manager this project uses)
+   - Open a terminal (search "Terminal" or "Command Prompt" in your Start menu)
+   - Paste this command and press Enter:
+     ```
+     npm install -g pnpm
+     ```
+   - Wait for it to finish. That's it.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### Running the App
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Open a terminal in the project folder**
+   - In VS Code: `File > Open Folder`, pick this project folder, then press `` Ctrl + ` `` to open the terminal
+   - Or: open Command Prompt / Terminal and navigate to the folder:
+     ```
+     cd path\to\course-list-test
+     ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies** (only needed the first time, or after pulling new changes)
+   ```
+   pnpm install
+   ```
+   Wait until it finishes. You'll see a bunch of text scroll by — that's normal.
 
-## Deploy on Vercel
+3. **Start the app**
+   ```
+   pnpm dev
+   ```
+   You should see something like:
+   ```
+   ▲ Next.js 16.1.6
+   - Local: http://localhost:3000
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Open the app in your browser**
+   - Go to http://localhost:3000
+   - The app should be running!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **To stop the app**
+   - Go back to the terminal and press `Ctrl + C`
+
+---
+
+### Quick Reference
+
+| What you want to do       | Command          |
+| ------------------------- | ---------------- |
+| Install dependencies      | `pnpm install`   |
+| Run in development mode   | `pnpm dev`       |
+| Build for production      | `pnpm build`     |
+| Run production build      | `pnpm start`     |
+| Run linting               | `pnpm lint`      |
+
+---
+
+### Troubleshooting
+
+- **"pnpm is not recognized"** — You need to install pnpm first (see Prerequisites step 2)
+- **"node is not recognized"** — You need to install Node.js first (see Prerequisites step 1)
+- **Port 3000 already in use** — Something else is using that port. Either close it, or run: `pnpm dev -- -p 3001` to use a different port
+- **Blank page or errors** — Try deleting the `.next` folder and running `pnpm dev` again

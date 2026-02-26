@@ -30,12 +30,13 @@ const CustomInputNumberRocker: React.FC<CustomInputNumberRockerProps> = ({
     }
   };
 
-  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = (event: React.FormEvent<HTMLInputElement>) => {
     if (!disabled) {
-      const value = event.target.value;
+      const target = event.currentTarget;
+      const value = target.value;
       // Replace any non-numeric characters with an empty string
-      event.target.value = value.replace(/\D/g, '');
-      const numericValue = Number(event.target.value);
+      target.value = value.replace(/\D/g, '');
+      const numericValue = Number(target.value);
       if (numericValue >= 0) {
         onChange(numericValue);
       }
